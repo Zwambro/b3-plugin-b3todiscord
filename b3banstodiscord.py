@@ -21,6 +21,7 @@
 #                                                                     #
 # ################################################################### #
 #
+#  based on Watchmiltan discord plugin 
 #  CHANGELOG:
 #  03.11.2019 - v1.0 - ZOMBIE
 #  - first release.
