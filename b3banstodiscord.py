@@ -129,6 +129,7 @@ class B3BanstodiscordPlugin(b3.plugin.Plugin):
 
     def onLoadConfig(self):
         self.url = str(self.config.get('settings', 'webhook'))
+        return
 
     def onStartup(self):
         # loading Admin plugin
@@ -138,7 +139,7 @@ class B3BanstodiscordPlugin(b3.plugin.Plugin):
             return False
         else:
             self.debug('Plugin successfully loaded')
-            return True
+            
         # Getting fucking events from fucking B3 events
         self.registerEvent(b3.events.EVT_CLIENT_BAN, self.onBan)
         self.registerEvent(b3.events.EVT_CLIENT_BAN_TEMP, self.onBan)
