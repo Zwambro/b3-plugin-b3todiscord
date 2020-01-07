@@ -21,7 +21,7 @@
 #                                                                     #
 # ################################################################### #
 #
-#  based on Watchmiltan discord plugin 
+#  based on Watchmiltan discord plugin and all the credit to him
 #  CHANGELOG:
 #  03.11.2019 - v1.0 - ZOMBIE
 #  - first release.
@@ -184,7 +184,7 @@ class B3BanstodiscordPlugin(b3.plugin.Plugin):
 
         embed.set_title("**%s** banned **%s** (@%s)" %
                         (self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
-        # embed.set_thumbnail('https://i.ibb.co/Tbx47RX/Lockdown-loading-screen-MW3-PNG.png')
+        #embed.set_thumbnail('https://i.ibb.co/Tbx47RX/Lockdown-loading-screen-MW3-PNG.png')
 
         #I added this line if admin kicked/banned someone without a reason or B3 kicked someone by slient kick/ban 
         if reason:
