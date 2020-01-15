@@ -1,4 +1,4 @@
-# B3-b3banstodiscord
+# B3-b3todiscord
 ## Introduction:
 Plugin for showing b3 bans and kicks on discord.
 
