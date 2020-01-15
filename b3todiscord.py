@@ -1,7 +1,7 @@
 #
 # ################################################################### #
 #                                                                     #
-#  B3banstodiscord Plugin for BigBrotherBot(B3) (www.bigbrotherbot.com)       #
+#  B3todiscord Plugin for BigBrotherBot(B3) (www.bigbrotherbot.com)       #
 #  Copyright (c) 2019 Ouchekkir Abdelmouaine                          #
 #                                                                     #
 #  This program is free software; you can redistribute it and/or      #
@@ -123,7 +123,7 @@ class DiscordEmbed:  # discord embed formatting
         result = requests.post(self.url, data=self.push, headers=headers)
 
 
-class B3BanstodiscordPlugin(b3.plugin.Plugin):
+class B3todiscordPlugin(b3.plugin.Plugin):
     _adminPlugin = None
     #bad_chars = ["*", "**", "_", "__", "`", "```", "~~", "||"]
 
