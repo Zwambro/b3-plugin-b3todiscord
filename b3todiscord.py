@@ -21,7 +21,7 @@
 #                                                                     #
 # ################################################################### #
 #
-#  based on Watchmiltan discord plugin 
+#  based on Watchmiltan discord plugin and all the credit to him
 #  CHANGELOG:
 #  03.11.2019 - v1.0 - ZOMBIE
 #  - first release.
@@ -125,7 +125,6 @@ class DiscordEmbed:  # discord embed formatting
 
 class B3todiscordPlugin(b3.plugin.Plugin):
     _adminPlugin = None
-    #bad_chars = ["*", "**", "_", "__", "`", "```", "~~", "||"]
 
     def onLoadConfig(self):
         self.url = str(self.config.get('settings', 'webhook'))
@@ -139,7 +138,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
             return False
         else:
             self.debug('Plugin successfully loaded')
-            
+
         # Getting fucking events from fucking B3 events
         self.registerEvent(b3.events.EVT_CLIENT_BAN, self.onBan)
         self.registerEvent(b3.events.EVT_CLIENT_BAN_TEMP, self.onBan)
@@ -184,9 +183,6 @@ class B3todiscordPlugin(b3.plugin.Plugin):
 
         embed.set_title("**%s** banned **%s** (@%s)" %
                         (self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
-        # embed.set_thumbnail('https://i.ibb.co/Tbx47RX/Lockdown-loading-screen-MW3-PNG.png')
-
-        #I added this line if admin kicked/banned someone without a reason or B3 kicked someone by slient kick/ban 
         if reason:
             embed.set_desc("Reason: %s" %
                            (self.stripColors(reason.replace(',', ''))))
@@ -206,9 +202,6 @@ class B3todiscordPlugin(b3.plugin.Plugin):
 
         if ip:
             embed.textbox(name='PlayerIP', value=ip, inline=True)
-
-        # if id :
-            #embed.textbox(name='PlayerID',value=" @"+id, inline=True)
 
         embed.set_footnote(text="Player Guid: " + hwid)
         embed.post()
@@ -247,7 +240,6 @@ class B3todiscordPlugin(b3.plugin.Plugin):
 
         embed.set_title("**%s** Kicked **%s** (@%s)" %
                         (self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
-        # embed.set_thumbnail('https://i.ibb.co/Tbx47RX/Lockdown-loading-screen-MW3-PNG.png')
 
         if reason:
             embed.set_desc("Reason: %s" %
@@ -262,8 +254,6 @@ class B3todiscordPlugin(b3.plugin.Plugin):
 
         if ip:
             embed.textbox(name='PlayerIP', value=ip, inline=True)
-        # if id :
-            #embed.textbox(name='PlayerID',value=" @"+id, inline=True)
 
         embed.set_footnote(text="Player GUID: " + hwid)
         embed.post()
