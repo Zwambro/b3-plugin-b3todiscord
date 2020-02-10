@@ -123,7 +123,7 @@ class DiscordEmbed:  # discord embed formatting
         result = requests.post(self.url, data=self.push, headers=headers)
 
 
-class B3todiscordPlugin(b3.plugin.Plugin):
+class B3TodiscordPlugin(b3.plugin.Plugin):
     _adminPlugin = None
 
     def onLoadConfig(self):
@@ -159,7 +159,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         client = event.client
         ip = client.ip
         id = str(client.id)
-        hwid = client.guid[-8:]
+        hwid = client.guid[-16:]
 
         if admin == None:
             admin_name = "B3"
@@ -181,8 +181,8 @@ class B3todiscordPlugin(b3.plugin.Plugin):
             embed.set_gamename(name='Call of Duty: Modern Warfare 2',
                                icon='https://i.gyazo.com/758b6933287392106bfdddc24b09d502.png')
 
-        embed.set_title("**%s** banned **%s** (@%s)" %
-                        (self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
+        embed.set_title("[%s] **%s** banned **%s** (@%s)" %
+                        (self.stripColors(client.maskedGroup.name), self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
         if reason:
             embed.set_desc("Reason: %s" %
                            (self.stripColors(reason.replace(',', ''))))
@@ -203,7 +203,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         if ip:
             embed.textbox(name='PlayerIP', value=ip, inline=True)
 
-        embed.set_footnote(text="Guid (last 8 characters): " + hwid)
+        embed.set_footnote(text="Guid (last 16 characters): " + hwid)
         embed.post()
 
     def onKick(self, event):
@@ -216,7 +216,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         client = event.client
         ip = client.ip
         id = str(client.id)
-        hwid = client.guid[-8:]
+        hwid = client.guid[-16:]
 
         if admin == None:
             admin_name = "B3"
@@ -238,8 +238,8 @@ class B3todiscordPlugin(b3.plugin.Plugin):
             embed.set_gamename(name='Call of Duty: Modern Warfare 2',
                                icon='https://i.gyazo.com/758b6933287392106bfdddc24b09d502.png')
 
-        embed.set_title("**%s** Kicked **%s** (@%s)" %
-                        (self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
+        embed.set_title("[%s] **%s** Kicked **%s** (@%s)" %
+                        (self.stripColors(client.maskedGroup.name), self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
 
         if reason:
             embed.set_desc("Reason: %s" %
@@ -255,7 +255,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         if ip:
             embed.textbox(name='PlayerIP', value=ip, inline=True)
 
-        embed.set_footnote(text="Guid (last 8 characters): " + hwid)
+        embed.set_footnote(text="Guid (last 16 characters): " + hwid)
         embed.post()
 
     def onUnban(self, event):
