@@ -28,7 +28,7 @@
 #
 
 __version__ = "1.0"
-__author__ = 'ZOMBIE'
+__author__ = 'Zwambro'
 
 
 import b3
@@ -159,7 +159,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         client = event.client
         ip = client.ip
         id = str(client.id)
-        hwid = client.guid.lower()
+        hwid = client.guid[-8:]
 
         if admin == None:
             admin_name = "B3"
@@ -203,7 +203,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         if ip:
             embed.textbox(name='PlayerIP', value=ip, inline=True)
 
-        embed.set_footnote(text="Player Guid: " + hwid)
+        embed.set_footnote(text="Guid (last 8 characters): " + hwid)
         embed.post()
 
     def onKick(self, event):
@@ -216,7 +216,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         client = event.client
         ip = client.ip
         id = str(client.id)
-        hwid = client.guid.lower()
+        hwid = client.guid[-8:]
 
         if admin == None:
             admin_name = "B3"
@@ -255,7 +255,7 @@ class B3todiscordPlugin(b3.plugin.Plugin):
         if ip:
             embed.textbox(name='PlayerIP', value=ip, inline=True)
 
-        embed.set_footnote(text="Player GUID: " + hwid)
+        embed.set_footnote(text="Guid (last 8 characters): " + hwid)
         embed.post()
 
     def onUnban(self, event):
