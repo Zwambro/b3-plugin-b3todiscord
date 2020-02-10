@@ -1,4 +1,4 @@
-<configuration plugin="b3banstodiscord">
+<configuration plugin="b3todiscord">
 	<settings name="settings">
 		<set name="webhook">PUT YOUR DISCORD WEBHOOK HERE</set>
 	</settings>
