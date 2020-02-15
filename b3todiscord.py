@@ -23,7 +23,7 @@
 #
 #  based on Watchmiltan discord plugin and all the credit to him
 #  CHANGELOG:
-#  03.11.2019 - v1.0 - ZOMBIE
+#  03.11.2019 - v1.0 - Zwambro
 #  - first release.
 #
 
@@ -238,7 +238,7 @@ class B3TodiscordPlugin(b3.plugin.Plugin):
             embed.set_gamename(name='Call of Duty: Modern Warfare 2',
                                icon='https://i.gyazo.com/758b6933287392106bfdddc24b09d502.png')
 
-        embed.set_title("[%s] **%s** Kicked **%s** (@%s)" %
+        embed.set_title("[%s] **%s** kicked **%s** (@%s)" %
                         (self.stripColors(client.maskedGroup.name), self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
 
         if reason:
