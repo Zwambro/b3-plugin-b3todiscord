@@ -181,8 +181,8 @@ class B3TodiscordPlugin(b3.plugin.Plugin):
             embed.set_gamename(name='Call of Duty: Modern Warfare 2',
                                icon='https://i.gyazo.com/758b6933287392106bfdddc24b09d502.png')
 
-        embed.set_title("[%s] **%s** banned **%s** (@%s)" %
-                        (self.stripColors(client.maskedGroup.name), self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
+        embed.set_title("**%s** banned **%s** (@%s)" %
+                        (self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
         if reason:
             embed.set_desc("Reason: %s" %
                            (self.stripColors(reason.replace(',', ''))))
@@ -238,8 +238,8 @@ class B3TodiscordPlugin(b3.plugin.Plugin):
             embed.set_gamename(name='Call of Duty: Modern Warfare 2',
                                icon='https://i.gyazo.com/758b6933287392106bfdddc24b09d502.png')
 
-        embed.set_title("[%s] **%s** kicked **%s** (@%s)" %
-                        (self.stripColors(client.maskedGroup.name), self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
+        embed.set_title("**%s** kicked **%s** (@%s)" %
+                        (self.stripColors(admin_name), self.stripColors(client.name.replace("|", '')), id))
 
         if reason:
             embed.set_desc("Reason: %s" %
