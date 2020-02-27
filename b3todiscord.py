@@ -159,7 +159,7 @@ class B3TodiscordPlugin(b3.plugin.Plugin):
         client = event.client
         ip = client.ip
         id = str(client.id)
-        hwid = client.guid[-16:]
+        hwid = client.guid #[-16:]
 
         if admin == None:
             admin_name = "B3"
@@ -216,7 +216,7 @@ class B3TodiscordPlugin(b3.plugin.Plugin):
         client = event.client
         ip = client.ip
         id = str(client.id)
-        hwid = client.guid[-16:]
+        hwid = client.guid #[-16:]
 
         if admin == None:
             admin_name = "B3"
@@ -262,6 +262,7 @@ class B3TodiscordPlugin(b3.plugin.Plugin):
 
         admin = event.data['admin']
         client = event.client
+        admin_name = admin.name
 
         embed = DiscordEmbed(self.url, color=0xCCCCCC)
         embed.set_thumbnail(
