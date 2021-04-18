@@ -1,5 +1,12 @@
 <configuration plugin="b3todiscord">
 	<settings name="settings">
+		<!--past your discord webhook here-->
 		<set name="webhook">PUT YOUR DISCORD WEBHOOK HERE</set>
+		<!--set 1 if you have echelon website, or 0 if not -->
+		<set name="echelon">1</set>
+		<!--set game id from echelon website-->
+		<set name="game_id">1</set>
+		<!--past your echelon link, must be like : "http://...." or "https://....."-->
+		<set name="echelon_url">PUT YOUR ECHELON URL HERE</set>
 	</settings>
 </configuration>
